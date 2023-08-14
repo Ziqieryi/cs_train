@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动后的影响</title>
+    <style>
+        .outer {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+        }
+        .box {
+            background-color: skyblue;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 10px;
+        }
+        .box1,.box2,.box3 {
+            float:left;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <!-- <div class="box box0">0</div> -->
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4"><span style="background-color: orange;">4</span></div>
+    </div>
+    <!-- float的第一个副作用:因为float布局下脱离文档流,父元素的高度没有人撑起为0,随后的元素则直接跟着出现产生重叠 -->
+    <!-- <div style="background-color: orange;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius error, obcaecati minus dolores voluptas tenetur, neque laudantium odit architecto quod autem beatae mollitia deleniti soluta, quo placeat voluptatum incidunt vel natus recusandae earum? Porro sequi unde, iure eveniet magnam repellendus perspiciatis accusamus earum dolor voluptas, rerum laudantium commodi, dolorum quaerat at ab mollitia? Perspiciatis accusantium incidunt ratione autem, quisquam non illum necessitatibus voluptatibus voluptatum doloribus ut dolorum? Provident atque id possimus impedit ea cupiditate necessitatibus illum perspiciatis quis rem aspernatur, similique nisi obcaecati magni sed quisquam quidem dicta? Necessitatibus, cum eius! In explicabo alias distinctio velit voluptatum necessitatibus, error itaque?</div> -->
+
+    <!-- float的第二个副作用:后面的兄弟元素,会占据浮动元素之前的位置且里面的内容会被甩出来,在浮动元素的下面,对前面的兄弟元素无影响 -->
+</body>
+</html>

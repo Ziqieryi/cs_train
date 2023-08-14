@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>默认宽度</title>
+    <style>
+        div {
+            height: 200px;
+            background-color: gray;
+            margin-bottom: 20px;
+            /* 对于块元素这种默认宽度是撑起父元素content宽度的元素来说 */
+            /* 如果没有设置宽度,在默认宽度的情况下添加margin,padding,boder等盒子属性 */
+            /* 则是在保持margin,padding,boder都生效的情况下,从里到外挤压content的宽度 */
+            /* 例如body的content宽度为1000,div是它的儿子,且div有margin30,padding20,border10
+            则这个div的content宽度为1000-30-30-20-20-10-10=880,整体上看,div的宽度仍然是撑满整个父元素body */
+        }
+        span {
+            background-color: skyblue;
+            margin: 50px;
+            border: 10px solid black;
+            padding: 10px;
+        }
+        img {
+            margin: 40px;
+            border: 20px solid black;
+            padding: 30px;
+        }
+        /* 因为行内元素和行内块元素的宽默认由内容撑起,默认宽为auto,所以不适用上面的结论 */
+        /* 可以认为span或img的宽是固定值,和div设置了固定的width一样,
+            所以不会像div这种块元素一样出现向里塌陷挤压content空间的情况 */
+    </style>
+</head>
+<body>
+    <div>你好啊</div>
+    <span>你好啊</span>
+    <img src="../images/悟空.jpg" alt="">
+</body>
+</html>

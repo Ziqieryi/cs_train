@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景相关属性</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+        div {
+            width: 300px;
+            height: 300px;
+            border: black 2px solid;
+            font-size: 40px;
+
+            /* 设置背景颜色 */
+            /* transparent,默认值,透明(和所在背景色一样,body默认白色) */
+            background-color: skyblue;
+
+            /* 设置背景图片 */
+            background-image: url("../images/悟空.jpg");
+
+            /* 设置背景图片的重复方式 */
+            background-repeat: no-repeat;
+
+            /* 控制背景图片位置的第一种写法,水平方向和垂直方向,
+            这里垂直方向的居中也用center不用middle,如果只写一个值,则另外一个补center */
+            background-position: bottom;
+            /* 控制背景图片位置的第二种写法,用具体的像素值,左上角为(0,0),和java的GUI库一样 */
+            /* (x,y),只写一个x或y也是补齐center */
+            background-position: 70px 40px;
+
+            /* 复合属性 */
+            background: fixed skyblue url(../images/悟空.jpg) no-repeat 300px;
+        }
+    </style>
+</head>
+<body>
+    <div>你好啊!</div>
+</body>
+</html>

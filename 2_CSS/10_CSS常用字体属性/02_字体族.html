@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体族</title>
+    <style>
+        .atguigu1 {
+            font-size: 100px;
+            font-family: "微软雅黑";
+        }
+        .atguigu2 {
+            font-size: 100px;
+            font-family: "楷体";
+        }
+        .atguigu3 {
+            font-size: 100px;
+            font-family: "宋体";
+        }
+        .atguigu4 {
+            font-size: 100px;
+            font-family: "华文彩云";
+        }
+        .atguigu5 {
+            font-size: 100px;
+            /* 从左到右依次匹配,匹配成功了则用,后面的不管了,否则一直找到最后,如果都不行则默认字体 */
+            font-family: "翩翩体-简","华文彩云","楷体","微软雅黑";
+        }
+        /* 通常将字体分为衬线字体,和非衬线字体 */
+        /* 衬线字体是字体有棱角感,横竖撇那有毛笔书法的感觉 */
+        /* 非衬线则反过来,没有棱角感,横竖撇那非常机械,计算机字体 */
+        /* 一个字体族的设定最好是同一个类型,即要么全是衬线要么全是非衬线 */
+        /* 当前主流网页用非衬线比较多 */
+        /* 有些浏览器不支持使用中文设定字体,可以去搜索字体的英文表达 */
+        /* 例如微软雅黑的英文名是Microsoft YaHei */
+        .atguigu6 {
+            font-size: 100px;
+            font-family: "翩翩体-简","华文彩云","楷体","Microsoft YaHei";
+        }
+        /* 一般来说,会在最后一个地方设置一个一定可以使用的字体负责收尾 */
+        /* 在前面诸多字体都没法使用时,sans-serif是浏览器从用户电脑上拿一个非衬线字体来使用 */
+        .atguigu7 {
+            font-size: 100px;
+            font-family: "翩翩体-简2","华文彩云2","楷体2","Microsoft YaHei2",sans-serif;
+        }
+        /* 反之serif则是浏览器从用户电脑上拿一个衬线字体来使用 */
+        .atguigu8 {
+            font-size: 100px;
+            font-family: "翩翩体-简2","华文彩云2","楷体2","Microsoft YaHei2",serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="atguigu1">尚硅谷1</div>
+    <div class="atguigu2">尚硅谷2</div>
+    <div class="atguigu3">尚硅谷3</div>
+    <div class="atguigu4">尚硅谷4</div>
+    <div class="atguigu5">尚硅谷5</div>
+    <div class="atguigu6">尚硅谷6</div>
+    <div class="atguigu7">尚硅谷7</div>
+    <div class="atguigu8">尚硅谷8</div>
+</body>
+</html>

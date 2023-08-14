@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪类选择器结构伪类3</title>
+    <style>
+        /* 四种写法选中孙七,看结构1 */
+        .first>p:nth-child(6) {
+            color: red;
+        } */
+        .first>p:nth-of-type(5) {
+            color: red;
+        } 
+        .first>p:nth-last-child(3) {
+            color: red;
+        }
+        .first>p:nth-last-of-type(2) {
+            color: red;
+        }
+        
+        /* 选中的是没有兄弟的span元素,终极孤儿选择器 ——看结构2 */
+        .second span:only-child {
+            color: green;
+        }
+        /* 选中的是没有同类型兄弟的span元素,低级孤儿选择器 ——看结构2 */
+        .second span:only-of-type {
+            color: green;
+        }
+        /* 选中的是html根元素,两种写法 */
+        /* :root {
+            background-color: aqua;
+        }
+        html {
+            background-color: aqua;
+        } */
+        
+        /* 选中的是没有内容的div元素,哪怕一个回车空格都没有 */
+        .third:empty {
+            background-color: red;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 结构1 -->
+    <div class="first">
+        <span>测试1</span>
+        <p>张三:98分</p>
+        <p>李四:88分</p>
+        <p>王五:78分</p>
+        <p>赵六:68分</p>
+        <p>孙七:58分</p>
+        <p>老八:48分</p>
+        <span>测试2</span>
+    </div>
+
+    <br>
+    <!-- 结构2 -->
+    <div class="second">
+        <div>
+            <span>测试1</span>
+        </div>
+        <div>
+            <span>测试2</span>
+            <p>张三:98分</p>
+            <p>李四:88分</p>
+            <p>王五:78分</p>
+            <p>赵六:68分</p>
+            <p>孙七:58分</p>
+            <p>老八:48分</p>
+        </div>
+    </div>
+
+    <!-- 结构3 -->
+    <div class="third"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单常用控件</title>
+</head>
+<body>
+    <form action="https://search.jd.com/search" target="_blank">
+        <!-- 文本输入框 -->
+        <input type="text" value="admin" placeholder="请输入用户名" name="username" maxlength="10"><br>
+        <!-- 密码输入框 -->
+        <input type="password" placeholder="请输入密码" name="password"><br>
+        <!-- 单选框 -->
+        <input type="radio" name="gender" value="male">男
+        <input type="radio" name="gender" value="female" checked>女<br>
+        <!-- 多选框 -->
+        <input type="checkbox" name="hobby" value="somke" checked>抽烟
+        <input type="checkbox" name="hobby" value="drink">喝酒
+        <input type="checkbox" name="hobby" value="perm">烫头<br>
+        <textarea name="other" cols="20" rows="3">
+
+        </textarea><br>
+        <select name="place">
+            <option value="广东">广东省</option>
+            <option value="福建" selected>福建省</option>
+        </select>
+        <!-- 隐藏域 -->
+        <input type="text" hidden name="abc" value="123"><br>
+        <!-- 确认按钮的两种写法 -->
+        <button type="submit">确认</button>
+        <input type="submit" value="确认">
+        <!-- 重置按钮的两种写法 -->
+        <button type="reset">重置</button>
+        <input type="reset" value="点我重置">
+        <!-- 普通按钮的两种写法 -->
+        <button type="button">检测账户是否被注册</button>
+        <input type="button" value="检测账户是否被注册">
+    </form>
+</body>
+</html>

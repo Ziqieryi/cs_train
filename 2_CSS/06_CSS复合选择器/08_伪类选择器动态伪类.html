@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态伪类选择器</title>
+    <style>
+        /* 没有访问过的标签用link */
+        a:link {
+            color: orange;
+        }
+        /* 访问过的标签用visited */
+        a:visited {
+            color: red;
+        }
+        /* 鼠标悬浮在标签上用hover */
+        a:hover {
+            color: skyblue;
+        }
+        /* 按下鼠标不松手在标签上用active */
+        a:active {
+            color: green;
+        }
+        /* 这几个伪类的顺序得是lvha的顺序,因为他们可能同时具有多种状态,例如你hover时link也是激活的,所以link得在最前面 */
+
+        /* hover和active是除了a和area之外都能使用的伪类选择器 */
+        span:hover {
+            color: green;
+        }
+        span:active {
+            color: red;
+        }
+        /* 焦点在元素上时,:focus伪类,focus只有表单里的那些才能用,例如输入框,多选框 */
+        input:focus,select:focus {
+            color:orange;
+            background-color: green;
+        }
+        /* select:focus {
+            color:orange;
+            background-color: green;
+        } */
+    </style>
+</head>
+<body>
+    <a href="https://www.baidu.com">去百度</a>
+    <a href="https://www.jd.com">去京东</a>
+    <span>尚硅谷</span>
+    <br>
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+    <select name="" id="">
+        <option value="shanghai">上海</option>
+        <option value="beijing">北京</option>
+    </select>
+    <input type="checkbox" value="123">男
+</body>
+</html>

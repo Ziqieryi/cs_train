@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        表格独有属性
+    </title>
+    <style>
+        table {
+            border-width: 2px;
+            border-color: green;
+            border-style: dotted;
+            width: 400px;
+            /* 简写,和font,list-style一样,声明里写多个属性,复合在一起 */
+            border: 2px green solid;
+
+            /* 表格所独有属性↓ */
+
+            /* 控制表格列宽 */
+            table-layout: fixed;
+
+            /* 控制单元格间距,在不合并边框下生效 */
+            border-spacing: 0px;
+
+            /* 合并相邻的单元格的边框 */
+            /* separate 分离,collapse 合并  */
+            border-collapse:separate;
+
+            /* 隐藏没有内容的单元格 */
+            /* show 展示 hide隐藏 */
+            empty-cells: hide;
+
+            /* 设置表格标题的位置 */
+            /* top tbody上方 bottom tbody下方 */
+            caption-side: top;
+        }
+        td,th {
+            border: 2px solid orange;
+        }
+    </style>
+</head>
+<body>
+     <table>
+        <caption>人员信息</caption>
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>政治面貌</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>张三</td>
+                <td>18</td>
+                <td>男</td>
+                <td>党员</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>张三</td>
+                <td>18</td>
+                <td>男</td>
+                <td>党员</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>张三</td>
+                <td>18</td>
+                <td></td>
+                <td>党员</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>张三</td>
+                <td>18</td>
+                <td>男</td>
+                <td>党员</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+            </tr>
+        </tfoot>
+     </table>
+</body>
+</html>

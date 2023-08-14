@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素的显示模式</title>
+    <style>
+        #d1 {
+            background-color: orange;
+        }
+        #d2 {
+            background-color: skyblue;
+        }
+        #d3 {
+            background-color: green;
+        }
+        div {
+            width: 200px;
+            height: 80px;
+        }
+        span {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+        .two {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <!-- 一.块元素 -->
+    <!-- display:block -->
+    <!-- 特点:1.在页面中独占一行,不会与任何元素共用一行,是从上到下排列的 -->
+    <!--     2.默认宽度:撑满父元素 -->
+    <!--     3.默认高度:由内容撑开 -->
+    <!--     4.可以通过CSS设置宽高和改变显示模式 -->
+    <div id="d1">你好你好你好你好</div>
+    <div id="d2">你好你好你好你好</div>
+    <div id="d3">你好你好你好你好</div>
+
+
+    <hr>
+    <!-- 二.行内元素 -->
+    <!-- display:inline -->
+    <!-- 特点:1.在页面中不独占一行,一行中不能容纳下的行内元素,会在下一行继续从左到右排列 -->
+    <!--     2.默认宽度:由内容撑开 -->
+    <!--     3.默认高度:由内容撑开 -->
+    <!--     4.无法通过CSS设置宽高 -->
+    <span>没法设置,这里的span宽高还是由内容决定,如果想设置可以考虑让内容变大变小去撑起span</span>
+    <span class="two">人之初</span>
+    <span class="two">人之初</span>
+    <span class="two">人之初</span>
+    <span class="two">人之初</span>
+    <span class="two">人之初</span>
+    <span class="two">人之初</span>
+    <span class="two">人之初</span>
+    <span class="two">人之初</span>
+    <span class="two">人之初</span>
+    <span class="two">人之初</span>
+    <span class="two">人之初</span>
+    <span class="two">人之初</span>
+    <span class="two">人之初</span>
+    <span class="two">人之初</span>
+    <span class="two">人之初</span>
+
+
+    <hr>
+    <!-- 三.行内块元素(内联块元素) -->
+    <!-- display:inline-block -->
+    <!-- 特点:1.在页面中不独占一行,一行中不能容纳下的行内元素,会在下一行继续从左到右排列 -->
+    <!--     2.默认宽度:由内容撑开 -->
+    <!--     3.默认高度:由内容撑开 -->
+    <!--     4.可以通过CSS设置宽高 -->
+    <img src="../images/悟空.jpg" alt="悟空">
+    <img src="../images/悟空.jpg" alt="悟空" style="width: 50px;">
+    <img src="../images/悟空.jpg" alt="悟空" style="height: 50px;">
+
+    <!-- 元素早期只分行内元素和块元素,行内块元素属于行内元素 -->
+</body>
+</html>

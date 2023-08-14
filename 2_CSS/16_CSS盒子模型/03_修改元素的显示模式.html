@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改元素的显示模式</title>
+    <style>
+        /* 这里说一点,除了block,inline,inline-block他们能够互相改之外 */
+        /* 还有一个none也是display可以设置的值,none是让元素不显示在网页上 */
+        /* 真的完全没了的那种,不会影响其他任何元素的显示,不过代码(DOM)里是有的 */
+        div {
+            font-size: 20px;
+            display: none;
+            width: 100px;
+        }
+        #d1 {
+            background-color: skyblue;
+        }
+        #d2 {
+            background-color: orange;
+        }
+        #d3 {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">你好1</div>
+    <div id="d2">你好2</div>
+    <div id="d3">你好3</div>
+    <script>
+        let d1=document.querySelector('#d1');
+        console.log(d1.innerHTML);
+    </script>
+</body>
+</html>

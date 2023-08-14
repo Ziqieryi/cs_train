@@ -1,0 +1,195 @@
+/* 基础设置 */
+.leftfix {
+    float: left;
+}
+
+.rightfix {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.w {
+    /* 版心宽度1190px */
+    width: 1190px;
+    /* 水平居中 */
+    margin: 0 auto;
+}
+
+/* 引入本地下载好的字体,并设置名字 */
+@font-face {
+    font-family: PingFangSC-Regular;
+    src: url(../../苹方-简.ttf);
+}
+
+/* #region顶部start */
+/* 顶部 */
+.top {
+    background-color: #ECECEC;
+    height: 30px;
+}
+
+/* 顶部导航栏 */
+.topbar {
+    height:30px;
+    line-height: 30px;
+    font-family: "PingFangSC-Regular",'隶书';
+    font-size: 12px;
+    font-weight: 600;
+}
+/* 给顶部导航栏设置分隔符并控制好导航按钮之间的间距 */
+.userbar a:not(:last-child)::after,.otherbar a:not(:last-child)::after{
+    content: '';
+    border-right: 1px solid #666;
+    /* 这两句任何一句加了会影响下面头部左边的浮动,并且和userbar有关,otherbar这么设置没问题 */
+    
+    /* font-size: 8px;
+    vertical-align: middle; */
+    margin-left: 10px;
+    margin-right: 10px;
+}
+/* #endregion顶部end */
+
+/* #region头部start */
+/* 头部 */
+.header {
+    height: 120px;
+}
+/* 页面头部网站logo */
+.logo {
+    /* width: 190px;
+    height: 120px; */
+}
+/* 页面头部搜索区 */
+.search {
+    width: 590px;
+    margin-top: 42px;
+    font-size: 0px;
+}
+/* 页面头部搜索区输入框 */
+.search input {
+    width: 508px;
+    height: 34px;
+    border: 1px solid rgba(221,48,45,1);
+    font-size: 12px;
+}
+/* 页面头部搜索区搜索按钮 */
+.search button {
+    width: 80px;
+    height: 36px;
+    background: #DD302D;
+    border: 1px solid rgba(221,48,45,1);
+    background-image: url(../images/serch_icon.png);
+    vertical-align: top;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+/* #endregion头部end */
+
+/* #region主导航栏start */
+
+/* 主导航栏 */
+.mainNav {
+    font-family: 'PingFangSC-Regular';
+    font-size: 16px;
+    color: #333;
+    letter-spacing: 0;
+    line-height: 22.4px;
+    font-weight: 500;
+    border-bottom: 1px solid #DD302D;
+    margin-top: 1px;
+}
+/* 主导航栏引导标题 */
+.mainNav-title {
+    width: 190px;
+    height: 48px;
+    color: #FFF;
+    background-color: #DD302D;
+    line-height: 48px;
+    text-align: center;
+}
+.mainNav-list {
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    margin-left: 10px;
+}
+.mainNav-list li {
+    float: left;
+    margin-right: 20px;
+}
+/* #endregion主导航栏end */
+
+/* #region侧边导航栏start */
+
+.main-content {
+    font-family: 'PingFangSC-Regular';
+    font-size: 14px;
+    letter-spacing: 0;
+    margin-top: 10px;
+}
+
+.sidebar {
+    width: 190px;
+    height: 458px;
+    background: #F4F4F4;
+    margin-right: 10px;
+}
+.sidebar ul {
+    padding-top: 9px;
+    padding-left: 16px;
+}
+.sidebar li {
+    margin-bottom: 8px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.banner {
+    width: 690px;
+    height: 458px;
+    background-image: url('../images/banner主图.png');
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+
+.news-function {
+    width: 290px;
+    height: 458px;
+}
+
+.content-news {
+    height: 156px;
+    border: 1px solid black;
+}
+
+
+
+.content-function {
+    height: 274px;
+    margin-top: 10px;
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.function-item {
+    margin-right: 22px;
+    text-align: center;
+}
+.function-item[endItem] {
+    margin-right: 0px;
+}
+.function-item h4 {
+    font-size: 14px;
+    color: #000;
+    height: 22px;
+    line-height: 22px;
+    display: inline-block;
+    margin-bottom: 17px;
+}
+/* #endregion侧边导航栏end */

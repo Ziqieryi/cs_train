@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin合并问题</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+        .box1 {
+            background-color: deepskyblue;
+            margin-bottom: 50px;
+        }
+        .box2 {
+            background-color: orange;
+            margin-top: 40px;
+        }
+        .test {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+        }
+        .testa {
+            background-color: purple;
+            margin-right: 50px;
+        }
+        .testb {
+            background-color: tomato;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- margin合并问题,出现在上下兄弟元素之间上兄弟设置了margin-bottom,下兄弟设置了margin-top
+    这个时候两者之间的margin距离不会是做加法,是会取个最大值去呈现,解决办法很简单,只设置一个元素
+    的margin,要么上兄弟的margin-bottom,要么下兄弟的margin-top -->
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <hr>
+    <div class="test testa">a</div><div class="test testb">b</div>
+</body>
+</html>

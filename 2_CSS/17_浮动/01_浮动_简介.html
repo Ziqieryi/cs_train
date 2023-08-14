@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动简介</title>
+    <style>
+        div {
+            width: 600px;
+            height: 400px;
+            background-color: skyblue;
+        }
+        img {
+            width: 200px;
+            float: right;
+        }
+        div:nth-child(2)::first-letter {
+            font-size: 40px;
+            color: red;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- float的浮动在设计之初用于让文字围绕着图片排列 -->
+    <!-- 除了让文字围绕着图片,还能文字围绕着文字 -->
+    <!-- 现如今这个浮动还被拿来用于布局 -->
+    网页布局发展史:1.表格布局->2.浮动布局->3.弹性盒子布局flex
+    <div>
+        <img src="../images/我的自拍.jpg" alt="">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis voluptates molestiae architecto alias minus reprehenderit sapiente, impedit sequi itaque, saepe numquam magni, provident commodi ipsam fuga iure possimus voluptas perferendis.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. In cum quae harum at placeat incidunt soluta perspiciatis quidem necessitatibus natus optio suscipit voluptate assumenda, quis animi vero perferendis vitae illo.
+    </div>
+    <div>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam explicabo illum itaque vero labore. Molestias delectus illo velit impedit obcaecati accusamus deleniti recusandae voluptate commodi odit, quaerat quod perferendis vel!
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>粘性定位</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        .header {
+            height: 250px;
+            line-height: 200px;
+            text-align: center;
+            font-size: 22px;
+            background-color: orange;
+        }
+        .content {
+            height: 300px;
+            overflow: scroll;
+        }
+        .card-header {
+            background-color: skyblue;
+            font-size: 28px;
+            position: sticky;
+            /* 粘性布局的参考点是参考第一个具有滚动行为的祖先元素(在这里也就是body) */
+            /* 胶水生效是在参考点生效之后,自己css指定的参考方向和像素 */
+            /* 失效是在包含粘性布局的这个父容器都没有在视口里的时候 */
+            top: 0px;
+        }
+        .card-content {
+            background-color: gray;
+        }
+        h2 {
+            font-size: 25px;
+            margin: 0px;
+        }
+        .footer {
+            height: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">头部区域</div>
+    <div class="content">
+        <div class="card">
+            <div class="card-header">A</div>
+            <div class="card-content">
+                <h2>A1</h2>
+                <h2>A2</h2>
+                <h2>A3</h2>
+                <h2>A4</h2>
+                <h2>A5</h2>
+                <h2>A6</h2>
+                <h2>A7</h2>
+                <h2>A8</h2>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">B</div>
+            <div class="card-content">
+                <h2>B1</h2>
+                <h2>B2</h2>
+                <h2>B3</h2>
+                <h2>B4</h2>
+                <h2>B5</h2>
+                <h2>B6</h2>
+                <h2>B7</h2>
+                <h2>B8</h2>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">C</div>
+            <div class="card-content">
+                <h2>C1</h2>
+                <h2>C2</h2>
+                <h2>C3</h2>
+                <h2>C4</h2>
+                <h2>C5</h2>
+                <h2>C6</h2>
+                <h2>C7</h2>
+                <h2>C8</h2>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>

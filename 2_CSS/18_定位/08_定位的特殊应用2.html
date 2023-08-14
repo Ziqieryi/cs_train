@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位的特殊应用2</title>
+    <style>
+        .outer {
+            width: 800px;
+            height: 400px;
+            background-color: #888;
+            position: relative;
+        }
+        .inner {
+            width: 400px;
+            height: 100px;
+            background-color: orange;
+            /* 之前让div水平居中父元素的方式 */
+            /* margin: 0 auto; */
+            font-size: 20px;
+            position: absolute;
+            /* 利用定位让div水平垂直居中父元素的方式一(如果没宽高就是充满整个父元素了,参考特殊应用1) */
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            /* 利用定位让div水平垂直居中父元素的方式二(也是知道本元素宽高的情况下) */
+            /* left: 50%;
+            top: 50%;
+            margin-left: -200px;
+            margin-top: -50px; */
+
+            /* 方式一更推荐 */
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">你好啊</div>
+    </div>
+</body>
+</html>

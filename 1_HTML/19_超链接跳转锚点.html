@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超链接跳转锚点</title>
+</head>
+<body>
+    <a href="#htL">看灰太狼</a>
+    <a href="#pageBottom">去底部</a>
+    <!-- 区分大小写,就像每个元素的ID一样,估计底层也是按ID来查找到对应的锚点元素 -->
+    <!-- <a href="#htL">看灰太狼</a>
+        一定要加#号,不然认为是一个url路径
+    <a href="htl">看灰太狼</a> -->
+
+    <p>我是一只羊,一直很肥美的羊</p>
+    <img src="./path_test/a/喜羊羊.jpg" alt="喜羊羊" title="喜羊羊">
+
+    <a id="htL"></a>
+    <p>我是一只狼,一只很邪恶的狼</p>
+    <img src="./path_test/a/b/灰太狼.jpg" alt="灰太狼">
+
+    <!-- 多个同样的锚点,会跳转到第一个搜索到的锚点那,就像document.querySelect搜索ID一样 -->
+    <!-- <a id="htL"></a> -->
+    <p>我是一只奥特曼,一只很能打的奥特曼</p>
+    <img src="./奥特曼.jpg" alt="奥特曼">
+
+    <!-- 只有a标签是可以按name来指明自身锚点,其他标签需要指明id,当然a标签也可以用ID来指明 -->
+    <!-- <input type="text" id="htL"> -->
+    <p>我是一只羊,一直很肥美的羊</p>
+    <img src="./path_test/怪兽.jpg" alt="怪兽">
+
+
+    <p>整体的介绍完毕了</p>
+    <a href="#">回到顶部</a>
+    <a href="">刷新页面</a>
+    <!-- 锚点还可以是其他文件里的,只需要在href的#ID前加URL即可,例如 -->
+    <a href="18_超链接跳转文件.html#atm">看上一节重点内容</a>
+    
+    <a href="javascript:alert('666');">执行js脚本</a>
+
+    <!-- 注意个细节,a标签如果没有href只有name那么是叫做锚点,
+    不能称作超链接,只有有href才能称作超链接 -->
+
+    <!-- 例如下面这个是超链接 -->
+    <a href="https://www.baidu.com">去百度</a>
+    
+    <br>
+    <!-- 下面这个是锚点 -->
+    <a name="pageBottom">底部</a>
+</body>
+</html>

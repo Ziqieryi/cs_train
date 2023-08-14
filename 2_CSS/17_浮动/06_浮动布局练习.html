@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动布局练习</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .header {
+            margin-bottom: 10px;
+        }
+        .content {
+            margin-bottom: 10px;
+        }
+        .content::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .foot {
+            background-color: gray;
+            text-align: center;
+            height: 60px;
+            line-height: 60px;
+        }
+        .logo {
+            background-color: gray;
+            float: left;
+            height: 80px;
+            width: 200px;
+            text-align: center;
+            line-height: 80px;
+        }
+        .banner1 {
+            background-color: gray;
+            float: left;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+            width: 540px;
+        }
+        .banner2 {
+            background-color: gray;
+            float: left;
+            width: 200px;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+        }
+        .menu {
+            clear: both;
+            text-align: center;
+            background-color: gray;
+            height: 30px;
+            line-height: 30px;
+        }
+        .card1 {
+            /* 栏目1-2和栏目3-6载体 */
+            height: 200px;
+            width: 750px;
+            margin-right: 10px;
+            margin-top: 10px;
+            float: left;
+            font-size: 0px;
+        }
+        .card2 {
+            /* 栏目7-9载体 */
+            height: 410px;
+            width: 200px;
+            float: right;
+            margin-top: 10px;
+            font-size: 0px;
+        }
+        .program {
+            font-size: 20px;
+            padding-top: 30px;
+            border: 2px solid black;
+            display: inline-block;
+            text-align: center;
+        }
+        .program1 {
+            /* 1-2 */
+            width: 366px;
+            height: 166px;
+        }
+        .program2 {
+            /* 3-6 */
+            width: 176px;
+            height: 166px;
+        }
+        .program3 {
+            /* 7-9 */
+            width: 196px;
+            height: 96px;
+        }
+        .program1:not(:last-child),.program2:not(:last-child) {
+            margin-right: 10px;
+        }
+        .program3:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <div class="logo">logo</div>
+            <div class="banner1">banner1</div>
+            <div class="banner2">banner2</div>
+            <!-- 菜单 -->
+            <div class="menu">菜单</div>
+        </div>
+        <div class="content">
+            <div class="card1">
+                <div class="program program1">栏目一</div>
+                <div class="program program1">栏目二</div>
+            </div>
+            <div class="card2">
+                <div class="program program3">栏目七</div>
+                <div class="program program3">栏目八</div>
+                <div class="program program3">栏目九</div>
+            </div>
+            <div class="card1">
+                <div class="program program2">栏目三</div>
+                <div class="program program2">栏目四</div>
+                <div class="program program2">栏目五</div>
+                <div class="program program2">栏目六</div>
+            </div>
+        </div>
+        <div class="foot">
+            <span>页脚</span>
+        </div>
+    </div>
+</body>
+</html>

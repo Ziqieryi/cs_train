@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超链接跳转页面</title>
+</head>
+<body>
+    <a href="https://www.jd.com/" target="_self">去京东</a>
+    <a href="https://www.baidu.com/" target="_blank">去百度</a>
+    <a href="./10_HTML排版标签.html">去排版标签</a>
+
+    <!-- 超链接里的内容不能再写超链接,里面会被浏览器摘出来,外层的a标签内容为空,点击不到 -->
+    <a href="./10_HTML排版标签.html">
+        <a href="./10_HTML排版标签.html">去排版标签</a>
+    </a>
+    
+    <!-- 下面的写法都是可以的,虽然a是行内元素,但是a里可以包含除了a自身自外的所有元素 -->
+    <a href="https://www.baidu.com">
+        <img src="./奥特曼.jpg" alt="" width="50px">
+    </a>
+    <div style="height: 100px;"></div>
+    <a href="https://www.baidu.com">
+        <div>
+            <span>右边是一个迪迦奥特曼</span>
+            <img src="./奥特曼.jpg" alt="" width="50px">
+        </div>
+    </a>
+    <!-- a标签里的东西到时候都会是点击后可以跳转到href链接 -->
+</body>
+</html>

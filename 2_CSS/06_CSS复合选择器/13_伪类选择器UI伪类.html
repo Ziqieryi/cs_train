@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪类选择器UI伪类</title>
+    <style>
+        /* 选中的是勾选的复选框或单选按钮 */
+        /* 复选框和单选按钮背景色和字体颜色css设置不了 */
+        /* 很多大型网站都是用的默认的效果 */
+        input:checked {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            color: red;
+        }
+        /* 选中的是被禁用的input元素 */
+        input:disabled {
+            background-color: gray;
+        }
+        /* 选中的是可用的input元素 */
+        input:enabled {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox">
+    <input type="radio" name="sex">
+    <input type="radio" name="sex">
+    <input type="text">
+    <input type="text" disabled>
+</body>
+</html>

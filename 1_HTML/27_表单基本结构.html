@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单基本结构</title>
+</head>
+<body>
+    <!-- 表单是网页中的交互区域,用于收集用户输入的信息 -->
+    <form action="https://www.baidu.com/s">
+        <input type="text" name="wd">
+        <button>搜索</button>
+    </form>
+    <hr>
+    <form action="https://search.jd.com/search" target="_blank" method="get">
+        <input type="text" name="keyword">
+        <button>去京东搜索</button>
+    </form>
+    <hr>
+    <!-- 虽然这么写form和a标签本质上都是跳转到新页面发请求,但是form侧重于标识name自动收集用户信息
+    而a则侧重于跳转,并且a标签如果要实现相同的效果需要拼接字符串,稍微有一点点麻烦.-->
+    <a href="https://search.jd.com/search?keyword=手机">搜索手机</a>
+</body>
+</html>

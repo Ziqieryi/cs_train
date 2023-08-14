@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS三大特性</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        h2 {
+            color: red;
+        }
+        h2 {
+            color: green;
+        }
+        #atguigu {
+            color: red;
+        }
+        h3 {
+            color: green;
+        }
+
+        div {
+            color: red;
+            font-size: 40px;
+            background-color: skyblue;
+        }
+        p {
+            color: purple;
+        }
+        * {
+            color: gray;
+        }
+        div,
+        p,
+        span {
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- 1.层叠性 -->
+    <!-- 概念:如果发生了样式冲突,那就会根据一定的规则(选择器优先级),进行样式的层叠(覆盖). -->
+    <!-- 什么是样式冲突?————同一个元素的同一个样式名,被设置了不同的值,这就是冲突 -->
+    <h2>尚硅谷</h2>
+    <h3 id="atguigu">尚硅谷</h3>
+    <!-- 2.继承性 -->
+    <!-- 概念:元素会自动拥有继承其父元素,或祖先元素里它有的样式和一些会被继承的属性 -->
+    <!-- 规则:优先继承离得近的 -->
+    <!-- 常见的可继承的属性:text-?? , font-?? , line-?? , color -->
+    <hr>
+    <div>
+        我是div中的文字
+        <span>我是span中的文字1</span>
+        <span>我是span中的文字2</span>
+        <span>我是span中的文字3</span>
+        <p>
+            <span>我是span中的文字4</span>
+        </p>
+    </div>
+    <!-- 3.优先级 -->
+    <!-- 简单聊:!important > 行内 > ID选择器 > 类选择器 > 元素选择器 > * > 默认的样式 > 继承的样式 -->
+    <!-- 注意一个点,并集选择器每个逗号分隔的选择器是分开算权重的,不会合起来累加起来 -->
+</body>
+</html>

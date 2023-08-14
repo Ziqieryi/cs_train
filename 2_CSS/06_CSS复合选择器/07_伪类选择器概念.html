@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_伪类选择器概念</title>
+    <style>
+        /* 伪类代表一类元素,a标签最好理解,对于没有访问过的a标签可能是一个,也可能是多个 */
+        /* 他们有共同的特性,都是a标签并且都没有访问过,所以伪类选择器标记的是一类元素 */
+        /* 没有访问过的标签用link */
+        a:link {
+            color: orange;
+        }
+        /* 访问过的标签用visited */
+        a:visited {
+            color: red;
+        }
+        /* 除了a标签之外,area标签也能够使用link和visited */
+        area:link {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.baidu.com">去百度</a>
+    <a href="https://www.jd.com">去京东</a>
+    <div>
+        <span id="lbresult">
+            <img src='../奥特曼.jpg' width='100%' heigh='100%' usemap='#b0a1a239cbf34d64acf4d6798dd67da0' border='0'/>
+            <map id="CribMap" name="b0a1a239cbf34d64acf4d6798dd67da0">
+            <area shape="poly" id="41" coords="244,90,244,210,322,210,295,150,322,90" href="#" title="垛位名：南2垛位"
+            />
+            <area shape="poly" id="43" coords="350,90,350,210,433,210,461,150,405,90" href="#" title="垛位名：垛位3"
+            />
+            <area shape="poly" id="42" coords="241,240,241,360,309,360,322,300,295,240" href="#" title="垛位名：北垛位2"
+            />
+            <area shape="poly" id="44" coords="240,390,240,510,364,510,350,450,336,390" href="#" title="垛位名：三堆场001"
+            />
+            </map>
+        </span>
+    </div>
+    <script type="text/javascript">
+ 
+        adjust();
+ 
+        var timeout = null;//onresize触发次数过多，设置定时器
+        window.onresize = function () {
+            clearTimeout(timeout);
+            timeout = setTimeout(function () { window.location.reload(); }, 100);//页面大小变化，重新加载页面以刷新MAP
+        }
+ 
+        //获取MAP中元素属性
+        function adjust() {
+            var map = document.getElementById("CribMap");
+            var element = map.childNodes;
+            var itemNumber = element.length / 2;
+            for (var i = 0; i < itemNumber - 1; i++) {
+                var item = 2 * i + 1;
+                var oldCoords = element[item].coords;
+                var newcoords = adjustPosition(oldCoords);
+                element[item].setAttribute("coords", newcoords);
+            }
+            var test = element;
+        }
+ 
+        //调整MAP中坐标
+        function adjustPosition(position) {
+            var pageWidth = document.body.clientWidth;//获取页面宽度
+            var pageHeith = document.body.clientHeight;//获取页面高度
+ 
+            var imageWidth = 1160;	//图片的长宽
+            var imageHeigth = 990;
+ 
+            var each = position.split(",");
+            //获取每个坐标点
+            for (var i = 0; i < each.length; i++) {
+                each[i] = Math.round(parseInt(each[i]) * pageWidth / imageWidth).toString();//x坐标
+                i++;
+                each[i] = Math.round(parseInt(each[i]) * pageHeith / imageHeigth).toString();//y坐标
+            }
+            //生成新的坐标点
+            var newPosition = "";
+            for (var i = 0; i < each.length; i++) {
+                newPosition += each[i];
+                if (i < each.length - 1) {
+                    newPosition += ",";
+                }
+            }
+            return newPosition;
+        }
+</script>
+</body>
+</html>

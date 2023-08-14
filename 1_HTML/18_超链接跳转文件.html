@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超链接跳转文件</title>
+</head>
+<body>
+    <!-- 下面都是浏览器可以支持打开的文件,所以a链接可以指明路径后打开这个文件 -->
+    <a href="./resource/如何一夜暴富.pdf" target="_self">暴富</a>
+    <a href="./resource/小姐姐.gif">小姐姐</a>
+    <a href="./resource/小电影.mp4">电影</a>
+    <a href="./resource/我的自拍.jpg">彦祖</a>
+
+    <!-- 浏览器不可以直接打开的文件，会触发下载保存 -->
+    <a href="./resource/内部资源.zip">内部资源</a>
+
+    <!-- 如何让浏览器面对可以支持打开的文件也是触发下载保存 -->
+    <a href="./resource/小电影.mp4" download="">下载小电影</a>
+    <a href="./resource/小电影.mp4" download="大电影">下载小电影</a>
+
+    <!-- 跳转在线的文件,下载在线的文件 -->
+    <a href="//www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png">点我看百度logo</a>
+    <a href="//www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" download="">下载百度logo</a>
+    <button onclick="download()">下载（跨域）</button>
+    <!-- 注意如果是外链只是加download属性是没用的,有浏览器的跨域保护问题. -->
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur id ea temporibus, quo, unde eligendi cupiditate, quos saepe dolorum nesciunt fuga aspernatur reiciendis totam rerum voluptatibus blanditiis. Sit, soluta in?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum provident itaque voluptate neque, odio consequatur. Animi, laborum. Deleniti dicta quaerat deserunt officia minima sint asperiores vitae. Iure earum quaerat quae!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quidem alias, optio quibusdam minus magni mollitia maiores autem iure at unde dolores possimus eligendi doloremque nisi enim laboriosam! Dolores, recusandae!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nesciunt rerum voluptatibus nobis debitis laboriosam enim aperiam architecto officiis, eligendi in ipsam esse hic, iste perferendis doloribus beatae consequatur. Architecto.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nulla fugit nisi consectetur consequuntur! Nesciunt, nobis! Ex voluptas quasi debitis eum neque voluptatem aperiam numquam quia possimus distinctio, iusto cum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quidem alias, optio quibusdam minus magni mollitia maiores autem iure at unde dolores possimus eligendi doloremque nisi enim laboriosam! Dolores, recusandae!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nesciunt rerum voluptatibus nobis debitis laboriosam enim aperiam architecto officiis, eligendi in ipsam esse hic, iste perferendis doloribus beatae consequatur. Architecto.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nulla fugit nisi consectetur consequuntur! Nesciunt, nobis! Ex voluptas quasi debitis eum neque voluptatem aperiam numquam quia possimus distinctio, iusto cum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quidem alias, optio quibusdam minus magni mollitia maiores autem iure at unde dolores possimus eligendi doloremque nisi enim laboriosam! Dolores, recusandae!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nesciunt rerum voluptatibus nobis debitis laboriosam enim aperiam architecto officiis, eligendi in ipsam esse hic, iste perferendis doloribus beatae consequatur. Architecto.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nulla fugit nisi consectetur consequuntur! Nesciunt, nobis! Ex voluptas quasi debitis eum neque voluptatem aperiam numquam quia possimus distinctio, iusto cum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quidem alias, optio quibusdam minus magni mollitia maiores autem iure at unde dolores possimus eligendi doloremque nisi enim laboriosam! Dolores, recusandae!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nesciunt rerum voluptatibus nobis debitis laboriosam enim aperiam architecto officiis, eligendi in ipsam esse hic, iste perferendis doloribus beatae consequatur. Architecto.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nulla fugit nisi consectetur consequuntur! Nesciunt, nobis! Ex voluptas quasi debitis eum neque voluptatem aperiam numquam quia possimus distinctio, iusto cum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quidem alias, optio quibusdam minus magni mollitia maiores autem iure at unde dolores possimus eligendi doloremque nisi enim laboriosam! Dolores, recusandae!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nesciunt rerum voluptatibus nobis debitis laboriosam enim aperiam architecto officiis, eligendi in ipsam esse hic, iste perferendis doloribus beatae consequatur. Architecto.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nulla fugit nisi consectetur consequuntur! Nesciunt, nobis! Ex voluptas quasi debitis eum neque voluptatem aperiam numquam quia possimus distinctio, iusto cum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quidem alias, optio quibusdam minus magni mollitia maiores autem iure at unde dolores possimus eligendi doloremque nisi enim laboriosam! Dolores, recusandae!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nesciunt rerum voluptatibus nobis debitis laboriosam enim aperiam architecto officiis, eligendi in ipsam esse hic, iste perferendis doloribus beatae consequatur. Architecto.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nulla fugit nisi consectetur consequuntur! Nesciunt, nobis! Ex voluptas quasi debitis eum neque voluptatem aperiam numquam quia possimus distinctio, iusto cum.
+      Lorem ipsum dolor sit amet, <a name="atm"></a>
+      <strong>consectetur adipisicing elit.</strong>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi dolor repellat, itaque esse doloremque nobis rerum corrupti tempore nulla nam molestias voluptatum! Atque sint amet officia nemo cupiditate doloribus quasi.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur hic labore, rerum iste aliquam molestiae deserunt totam perferendis quasi repellendus praesentium nihil temporibus tempora error recusandae ad saepe culpa odit.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui est, atque quod distinctio perferendis, sint animi facilis, asperiores deleniti illo molestiae. Et aliquam ipsum fugiat nesciunt autem corporis voluptatem unde.
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat qui odio eum, eos commodi possimus! Ratione libero cum, a vero voluptate quaerat aut repudiandae ea hic ducimus quia non tempore!
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit ratione, dolorum in maiores, officia similique ab labore consequatur nostrum laboriosam libero perferendis accusantium illo quasi quaerat impedit, repudiandae veniam ad!
+       Illo quidem alias, optio quibusdam minus magni mollitia maiores autem iure at unde dolores possimus eligendi doloremque nisi enim laboriosam! Dolores, recusandae!
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, quis ratione ex veniam assumenda doloremque impedit nostrum voluptates et exercitationem, rem quae maxime ducimus dolor dolorem dicta quas labore sunt.
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae suscipit tempore quisquam optio, facere quaerat eaque enim nam doloribus architecto omnis ab minima vero, expedita illum nobis perspiciatis deleniti nostrum?
+
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nesciunt rerum voluptatibus nobis debitis laboriosam enim aperiam architecto officiis, eligendi in ipsam esse hic, iste perferendis doloribus beatae consequatur. Architecto.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nulla fugit nisi consectetur consequuntur! Nesciunt, nobis! Ex voluptas quasi debitis eum neque voluptatem aperiam numquam quia possimus distinctio, iusto cum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quidem alias, optio quibusdam minus magni mollitia maiores autem iure at unde dolores possimus eligendi doloremque nisi enim laboriosam! Dolores, recusandae!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nesciunt rerum voluptatibus nobis debitis laboriosam enim aperiam architecto officiis, eligendi in ipsam esse hic, iste perferendis doloribus beatae consequatur. Architecto.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nulla fugit nisi consectetur consequuntur! Nesciunt, nobis! Ex voluptas quasi debitis eum neque voluptatem aperiam numquam quia possimus distinctio, iusto cum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quidem alias, optio quibusdam minus magni mollitia maiores autem iure at unde dolores possimus eligendi doloremque nisi enim laboriosam! Dolores, recusandae!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nesciunt rerum voluptatibus nobis debitis laboriosam enim aperiam architecto officiis, eligendi in ipsam esse hic, iste perferendis doloribus beatae consequatur. Architecto.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nulla fugit nisi consectetur consequuntur! Nesciunt, nobis! Ex voluptas quasi debitis eum neque voluptatem aperiam numquam quia possimus distinctio, iusto cum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quidem alias, optio quibusdam minus magni mollitia maiores autem iure at unde dolores possimus eligendi doloremque nisi enim laboriosam! Dolores, recusandae!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nesciunt rerum voluptatibus nobis debitis laboriosam enim aperiam architecto officiis, eligendi in ipsam esse hic, iste perferendis doloribus beatae consequatur. Architecto.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nulla fugit nisi consectetur consequuntur! Nesciunt, nobis! Ex voluptas quasi debitis eum neque voluptatem aperiam numquam quia possimus distinctio, iusto cum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quidem alias, optio quibusdam minus magni mollitia maiores autem iure at unde dolores possimus eligendi doloremque nisi enim laboriosam! Dolores, recusandae!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nesciunt rerum voluptatibus nobis debitis laboriosam enim aperiam architecto officiis, eligendi in ipsam esse hic, iste perferendis doloribus beatae consequatur. Architecto.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nulla fugit nisi consectetur consequuntur! Nesciunt, nobis! Ex voluptas quasi debitis eum neque voluptatem aperiam numquam quia possimus distinctio, iusto cum.
+      
+    </p>
+    <script>
+      function download() {
+        var url = 'http://scdn.gongyi.qq.com/quiz/Exam-Template.xlsx';
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true); // 异步
+        xhr.responseType = 'blob'; // blob 类型
+        xhr.onload = function () {
+          if (xhr.status != 200) {
+            alert('下载异常！');
+            return;
+          }
+          if (window.navigator.msSaveOrOpenBlob) {
+            // IE
+            navigator.msSaveBlob(xhr.response, filename);
+          } else {
+            var newUrl = window.URL.createObjectURL(xhr.response);
+            var a = document.createElement('a');
+            a.setAttribute('href', newUrl);
+            a.setAttribute('target', '_blank');
+            a.setAttribute('download', '模板文件.xlsx'); // 自定义文件名（有效）
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+          }
+        };
+        xhr.send();
+      }
+    </script>
+</body>
+</html>

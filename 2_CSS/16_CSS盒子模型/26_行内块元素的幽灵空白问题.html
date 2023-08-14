@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行内块元素的幽灵空白问题</title>
+    <style>
+        div {
+            width: 600px;
+            background-color: orange;
+            /* 幽灵空白问题产生原因:行内块元素的baseline默认与父元素的baseline(小写x的基线)对齐 */
+        }
+        .img1 {
+            /* 第一种解决方案 */
+            /* 所以针对于产生原因我们第一种解决幽灵空白问题很自然想到修改行内块元素的vertical-align的对齐方式 */
+            /* 除了baseline之外的值(bottom,top,middle)都能解决这个问题,只不过文字在的位置不同 */
+            /* 这个解决办法比较好 */
+            vertical-align: middle;
+        }
+        .img2 {
+            /* 第二种解决方案 */
+            /* 将他强行改成块元素,直接占满整行 */
+            display: block;
+        }
+        .div1 {
+            /* 第三种解决办法 */
+            /* 将父元素的font-size设置为0,则就算行内块元素基线对齐也不会有幽灵空白了 */
+            /* 如果该行内块所在的内部还有文本,则需单独为文本设置font-size即可显示 */
+            font-size: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../images/悟空.jpg" alt="">
+        x
+    </div>
+    <hr>
+    <div>
+        <img src="../images/悟空.jpg" alt="" class="img2">
+        <!-- 这里之后没有东西了,只有这个行内块元素 -->
+    </div>
+    <hr>
+    <div class="div1">
+        <img src="../images/悟空.jpg" alt="">
+        x
+    </div>
+</body>
+</html>

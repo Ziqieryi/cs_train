@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>细说font-size</title>
+    <style>
+        div {
+            background-color: skyblue;
+        }
+        /* 由于字体设计的原因,文字最终呈现的大小,并不一定与font-size的值一致,可能大也可能小.
+        例如font-size设为40px,最终呈现的文字,可能比40px大,也可能比40px小. */
+        /* 通常情况下,文字相对字体设计框,并不是垂直居中的,通常都靠下一些 */
+        /* 字体设计的时候以小写字母x的下边为基线对齐 */
+        /* x偏下则其他字母文字都偏下 */
+        /* font-size其实控制的是字体设计时字所在的那个框的高度,宽度跟着高度同比例变化,字就变大了 */
+    </style>
+</head>
+<body>
+    <div>atguigux山硅谷</div>
+    <span style="font-size: 40px; font-family: '微软雅黑';">尚</span>
+    <span style="font-size: 40px; font-family: '隶书';">尚</span>
+    <span style="font-size: 40px; font-family: '翩翩体-简';">尚</span>
+</body>
+</html>

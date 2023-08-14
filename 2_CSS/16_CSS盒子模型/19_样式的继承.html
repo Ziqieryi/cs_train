@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>样式的继承</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        #d1 {
+            height: 600px;
+            padding: 50px;
+            background-color: gray;
+            font-size: 35px;
+            color: yellow;
+            font-weight: bold;
+        }
+        #d2 {
+            height: 400px;
+            background-color: orange;
+            padding: 50px;
+        }
+        #d3 {
+            height: 200px;
+            background-color: green;
+        }
+        /* 能继承的属性,都是不影响布局的,简单说:都是和盒子模式没关系的 */
+    </style>
+</head>
+<body>
+    <div id="d1">
+        <div id="d2">
+            <div id="d3">你好啊</div>
+        </div>
+    </div>
+</body>
+</html>

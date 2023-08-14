@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>优先级</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <!-- 行内样式是老大,同名冲突样式听行内样式,和顺序无关 -->
+    <h1 style="color: red;">欢迎来到尚硅谷学习</h1>
+    <!-- 内部样式和外部样式同名冲突样式谁后来听谁的,后来者居上,和顺序有关 -->
+    <h2>欢迎学习前端</h2>
+    <p>层叠样式表编写的内部出现顺序也是有覆盖关系</p>
+    <h3>
+        层叠样式表编写的内部出现顺序也是有覆盖关系
+    </h3>
+    <style>
+        h1{
+            color:blue;
+            font-size: 100px;
+        }
+        h2{
+            color: blue;
+        }
+    </style>
+    <!-- 甚至包括样式表里也是有覆盖的说法,例如下面这样 -->
+    <style>
+        p{
+            color:red;
+            color:blue;
+            font-size: 10px;
+            font-size: 30px;
+        }
+        h3{
+            color:red;
+            font-size: 10px;
+        }
+        h3{
+            color:green;
+            font-size: 30px;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后代选择器</title>
+    <style>
+        /* 后代选择器用空格,不管是儿子是孙子还是重孙子都是后代 */
+        ul li {
+            color: red;
+        }
+        ol li {
+            color: green;
+        }
+        /* 后代选择器可以有不止一个层级 */
+        ul li a {
+            color:orange;
+        }
+        ol li a {
+            color: gray;
+        }
+        .subject #front-end {
+            color: blue;
+        }
+        p h2 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        学习
+        <li>抽烟</li>
+        <li>
+            <a href="#">喝酒</a>
+        </li>
+        <li>
+            <a href="#">烫头</a>
+        </li>
+        <div>
+            <li>
+                你好
+                <a href="#">你好</a>
+            </li>
+        </div>
+    </ul>
+    <hr>
+    <ol>
+        <li>张三</li>
+        <li>李四</li>
+        <li>
+            <a href="#">王五</a>
+        </li>
+    </ol>
+    <hr>
+    <ol class="subject">
+        <li id="front-end">前端</li>
+        <li>Java</li>
+        <li>大数据</li>
+        <li>UI</li>
+    </ol>
+    <p>
+        <h2>你好</h2>
+    </p>
+</body>
+</html>

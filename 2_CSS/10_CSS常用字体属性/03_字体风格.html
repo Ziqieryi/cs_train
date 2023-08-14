@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体风格</title>
+    <style>
+        .atguigu1 {
+            font-size: 100px;
+            font-style: normal;
+        }
+        .atguigu2 {
+            font-size: 100px;
+            font-style: italic;
+        }
+        .atguigu3 {
+            font-size: 100px;
+            font-style: oblique;
+        }
+        /* italic和oblique都是把字体倾斜 */
+        /* 但是他们的工作模式有所差别 */
+        /* italic是会去找字体设计者所设计的斜体拿来用,如果字体设计者在设计字体时没有设计斜体
+         则italic会将字体模拟倾斜做个效果 */
+        /* oblique非常暴力,它不管字体设计者有没有设计斜体,它将字体全部用模拟倾斜处理 */
+        .atguigu4 {
+            font-size: 100px;
+            font-style: inherit;
+        }
+        /* em也会让字体倾斜,但是注意元素标签的语义化,至于斜还是不斜随便能用font-style调 */
+        /* em的语义是想强调em里的内容 */
+        em {
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="atguigu1">尚硅谷1</div>
+    <div class="atguigu2">尚硅谷2</div>
+    <div class="atguigu3">尚硅谷3</div>
+    <div class="atguigu4">尚硅谷4</div>
+    <em>尚硅谷5</em>
+</body>
+</html>

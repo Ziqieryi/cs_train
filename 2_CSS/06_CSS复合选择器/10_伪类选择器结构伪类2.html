@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪类选择器结构伪类2</title>
+    <style>
+        /* 选中的是div1的众多儿子里的最后一个,并且他要是p,看结构1 */
+        .first>p:last-child {
+            color: red;
+        }
+        /* 选中的是div1的众多儿子里的第三个,并且他要是p,看结构1 */
+        .first>p:nth-child(3) {
+            color: blue;
+        }
+
+        /* 除了可以直接写第几个之外,还可以写带n的公式选中奇偶 */
+
+        /* 选中的是div2的众多儿子里的奇儿子,并且他要是p,看结构2 */
+        .second>p:nth-child(2n+1) {
+            /* 括号里写odd也是一样的效果 */
+            color: green;
+        }
+        /* 选中的是div2的众多儿子里的偶儿子,并且他要是p,看结构2 */
+        .second>p:nth-child(2n) {
+            /* 括号里写even也是一样的效果 */
+            color: aqua;
+        }
+        /* 选中的是div3的众多儿子里的前五个,并且他要是p,看结构3 */
+        .third>p:nth-child(-n+5) {
+            color: chocolate;
+        }
+        /* 其实nth-child里是要写an+b的公式形式,直接写数字也不过是0n+b */
+        /* 所以对于选中前五个来说不能写成5-n的形式,不符合要求,a和b到对应不上 */
+
+        /* 下面两种写法都能选中结构4里的张三
+        区别是firstOfType是在同类型元素里的第一个,能过滤掉其他元素的干扰
+        只要它是作为儿子出现,并且在众多选中的同类型元素中是第一个那么这个选择器就生效 */
+        .fourth>p:nth-child(2) {
+            color: red;
+        }
+
+        .fourth>p:first-of-type {
+            color: red;
+        }
+        /* 同样的of-type也有nth,用法一样,但是能过滤掉其他不同元素的干扰 */
+        .fourth>p:nth-of-type(-n+3) {
+            color: red;
+        }
+        .fourth>p:nth-of-type(4) {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 结构1 -->
+    <div class="first">
+        <p>张三:98分</p>
+        <p>李四:88分</p>
+        <p>王五:68分</p>
+        <p>赵六:58分</p>
+        <p>孙七:48分</p>
+        <p>老八:38分</p>
+    </div>
+
+    <!-- 结构2 -->
+    <div class="second">
+        <p>第1个</p>
+        <p>第2个</p>
+        <p>第3个</p>
+        <p>第4个</p>
+        <p>第5个</p>
+        <p>第6个</p>
+        <p>第7个</p>
+        <p>第8个</p>
+        <p>第9个</p>
+        <p>第10个</p>
+    </div>
+
+    <!-- 结构3 -->
+    <div class="third">
+        <p>第1个</p>
+        <p>第2个</p>
+        <p>第3个</p>
+        <p>第4个</p>
+        <p>第5个</p>
+        <p>第6个</p>
+        <p>第7个</p>
+        <p>第8个</p>
+        <p>第9个</p>
+        <p>第10个</p>
+    </div>
+    
+    <!-- 结构4 -->
+    <div class="fourth">
+        <span>测试1</span>
+        <p>张三:98分</p>
+        <span>测试2</span>
+        <p>李四:88分</p>
+        <p>王五:68分</p>
+        <span>测试3</span>
+        <p>赵六:58分</p>
+        <span>测试4</span>
+        <span>测试5</span>
+        <p>孙七:48分</p>
+        <p>老八:38分</p>
+    </div>
+</body>
+</html>

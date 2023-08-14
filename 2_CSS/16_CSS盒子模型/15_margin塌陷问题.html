@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin塌陷问题</title>
+    <style>
+        .outer {
+            width: 400px;
+            /* height: 400px; */
+            background-color: gray;
+            margin-top: 40px;
+            margin-bottom: 50px;
+            overflow: hidden;
+        }
+        .inner1 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            /* 这段外边距的设置是有问题的,会产生margin塌陷 */
+            margin-top: 30px;
+        }
+        .inner2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            /* 这段外边距的设置是有问题的,会产生margin塌陷 */
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 总的来说margin塌陷就是子元素的上下外边距设置没有相对父元素生效
+         并且这个设置的上下外边距会作用到父元素身上,如果父元素也有对应的上下外边距则取两者的最大值生效
+         具体来说,上外边距的margin塌陷只会出现在父子嵌套里的第一个儿子和父亲之间
+         下外边距的margin塌陷只会出现在父子嵌套里的最后一个儿子和父亲之间并且父亲的高度是由内容撑起
+         解决办法,在父亲css属性中添加overflow:hidden触发BFC(块级格式上下文)
+         其目的是形成一个独立的空间，让空间中的子元素不会影响到这个独立空间之外的布局，自然就不会
+         反过来影响到父元素的margin,margin塌陷就这么解决了,同样的margin合并也是可以这么解决
+         参考文章：1.https://zhuanlan.zhihu.com/p/337857229
+                  2.https://juejin.cn/post/6976272394247897101
+     -->
+    <div class="outer">
+        <div class="inner1">inner1</div>
+        <div class="inner2">inner2</div>
+    </div>
+    <hr>
+</body>
+</html>

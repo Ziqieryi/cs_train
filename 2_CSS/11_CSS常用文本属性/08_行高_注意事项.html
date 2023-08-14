@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行高注意事项</title>
+    <style>
+        /* 注意点1：行高过小会怎么样？ ——文字重叠,且最小值是0,不能为负数,浏览器呈现不了会换成normal */
+        #d1 {
+            font-size: 40px;
+            background-color: skyblue;
+            line-height: 0px;
+        }
+        /* 注意点2； 行高是可以继承的,一般写数值的写法继承之后按各自的font-size去计算*/
+        #d2 {
+            font-size: 40px;
+            background-color: orange;
+            line-height: 1.5;
+        }
+        span {
+            font-size: 200px;
+            color: red;
+        }
+
+        /* 注意点3：line-height和height是什么关系
+            设置了height,高度就是height的值
+            没有设置height,height的高度就是line-height*行数
+        */
+        #d3 {
+            font-size: 40px;
+            background-color: yellowgreen;
+            line-height: 100px;
+            /* height: 300px; */
+        }
+        #d4 {
+            font-size: 40px;
+            background-color: yellowgreen;
+            line-height: 0px;
+        }
+
+        /* 行高的应用场景1：调整多行文字间的间距 */
+        #d5 {
+            font-size: 40px;
+            background-color: skyblue;
+            line-height: 100px;
+        }
+
+        /* 行高的应用场景2：调整单行文字的垂直居中 */
+        #d6 {
+            /* 让height和line-height相等 */
+            /* 在单行情况下,如果这俩相等则代表文字充满整个容器则垂直居中 */
+            /* 因为是单行,所以其实不写height都行,height=line-height*1(行数) */
+            font-size: 40px;
+            background-color: skyblue;
+            line-height: 300px;
+            height: 300px;
+        }
+        /* 但是由于字体设计的原因,这样实现的垂直居中并不是绝对的垂直居中,具体去看06_细说font-size */
+    </style>
+</head>
+<body>
+    <!-- <div id="d1">atguigu尚硅谷让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguigu</div> -->
+    <!-- <div id="d2">atguigu尚硅谷让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguiguatguigux<span>x尚硅谷</span>让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguiguatguigu尚硅谷让天下没有难学的技术atguigu</div> -->
+    <!-- <div id="d3">atguigu尚硅谷让天下没有难学的技术atguatguigu尚硅谷让天下没有难学的技术atguatguigu尚硅谷让天下没有难学的技术atguatguigu尚硅谷让天下没有难学的技术atguatguigu尚硅谷让天下没有难学的技术atgu</div> -->
+    <!-- <div id="d4">atguigu尚硅谷让天下没有难学的技术atguatguigu尚硅谷让天下没有难学的技术atguatguigu尚硅谷让天下没有难学的技术atguatguigu尚硅谷让天下没有难学的技术atguatguigu尚硅谷让天下没有难学的技术atgu</div> -->
+    <!-- <div id="d5">atguigu尚硅谷让天下没有难学的技术atguatguigu尚硅谷让天下没有难学的技术atguatguigu尚硅谷让天下没有难学的技术atguatguigu尚硅谷让天下没有难学的技术atguatguigu尚硅谷让天下没有难学的技术atgu</div> -->
+    <div id="d6">atguigu尚硅谷让天下没有难学的技术</div>
+</body>
+</html>

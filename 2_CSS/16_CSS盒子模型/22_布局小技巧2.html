@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>布局小技巧2</title>
+    <style>
+        .outer {
+            width: 400px;
+            height: 400px;
+            background-color: gray;
+            /* 垂直居中 */
+            line-height: 400px;
+            /* 水平居中 */
+            text-align: center;
+            /* 处理文本的居中同样适用于行内元素,行内块元素 */
+        }
+        .inner {
+            background-color: orange;
+            font-size: 20px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <span class="inner">出来玩啊?</span>
+    </div>
+</body>
+</html>

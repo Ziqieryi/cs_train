@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vertical-align</title>
+    <style>
+        div {
+            font-size: 100px;
+            background-color: skyblue;
+            height: 300px;
+            line-height: 200px;
+        }
+        span {
+            background-color: orange;
+            font-size: 20px;
+            vertical-align: bottom;
+            /* top:顶部对齐 */
+            /* baseline:基线对齐 */
+            /* bottom:底部对齐 */
+            /* middle:使元素的中部(元素高度的一半,垂直中心线)与父元素的基线加上父元素的小写x的高度的一半对齐 */
+        } 
+        img {
+            vertical-align: middle;
+            height: 30px;
+        }
+        .test {
+            width: 400px;
+            height: 400px;
+            background-color: green;
+            /* vertical-align是相对于父元素的高度 */
+        }
+        div::after {
+            content:"x";
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>x前端</span>
+    </div>
+    <!-- <div>
+        atguigu尚硅谷x<img src="../favicon.ico">
+    </div>
+    <hr>
+    <div class="test"><span>123</span></div> -->
+</body>
+</html>

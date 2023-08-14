@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪类选择器结构伪类选择器</title>
+    <style>
+        /* 选中的是div1的众多儿子里的第一个,并且他要是p,看结构1 */
+        .first>p:first-child {
+            color: red;
+        }
+        /* 选中的是div2的众多儿子里的第一个,并且他要是p,看结构2 */
+        .second>p:first-child {
+            color: green;
+        }
+        div:first-child {
+            background-color: aqua;
+        }
+        /* 其实这种first-child或者last-child怎么理解呢 */
+        /* 就是前面是选中的元素,后面是他作为不管什么父元素下的第一个元素或者最后一个元素时生效 */
+        /* 例如div:first-child就是当div作为儿子且是第一个时这个选择器生效 */
+
+        /* 选中的是div3的众多后代里的第一个,并且他要是p,看结构3 */
+        .third p:first-child {
+            color: blue;
+        }
+        p:first-child {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p>测试3</p>
+    <!-- 结构1 -->
+    <div class="first">
+        <p>张三:98分</p>
+        <p>李四:88分</p>
+        <p>王五:78分</p>
+        <p>赵六:68分</p>
+    </div>
+    <!-- 结构2 -->
+    <div class="second">
+        <span>张三:98分</span>
+        <p>李四:88分</p>
+        <p>王五:78分</p>
+        <p>赵六:68分</p>
+    </div>
+    <!-- 结构3 -->
+    <div class="third">
+        <p>测试2</p>
+        <marquee>
+            <p>测试1</p>
+            <p>张三:98分</p>
+        </marquee>
+        <p>李四:88分</p>
+        <p>王五:78分</p>
+        <p>赵六:68分</p>
+    </div>
+</body>
+</html>

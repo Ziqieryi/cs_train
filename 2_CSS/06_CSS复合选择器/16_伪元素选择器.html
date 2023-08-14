@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素选择器</title>
+    <style>
+        /* 选中的是div里内容的第一个文字,不管中文,英文,还是什么文,选中第一个单位的文字 */
+        div::first-letter {
+            color: red;
+            font-size: 40px;
+        }
+        /* 选中的是div里内容的第一行文字 */
+        div::first-line {
+            text-decoration-line: underline;
+        }
+
+        /* 选中的是div中被鼠标选择的文字 */
+        div::selection {
+            background-color: green;
+            color: orange;
+        }
+        /* 选中的是input元素中的提示文字 */
+        input::placeholder {
+            color: skyblue;
+        }
+        /* 选中的是p元素内容的最开始的位置,随后创建一个子元素在F12里能看到::before */
+        p::before {
+            content: "¥";
+        }
+        /* 选中的是p元素内容的最后的位置,随后创建一个子元素在F12里能看到::after */
+        p::after {
+            content: ".00";
+        }
+    </style>
+</head>
+<body>
+    <div>
+        の我Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, 
+        quidem porro eum neque, quisquam minima atque nihil mollitia rem consequatur 
+        tempore a architecto ducimus non perferendis cum unde delectus facere?
+    </div>
+    <input type="text" placeholder="请输入您的用户名">
+    <p>199</p>
+    <p>299</p>
+    <p>399</p>
+    <p>499</p>
+</body>
+</html>

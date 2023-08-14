@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解决浮动后的影响</title>
+    <style>
+        .outer {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+            /* 第一种解决方案,手动计算高度设置好高度,则父元素后面的重叠影响就解决了 */
+            /* 没法解决父元素内非float元素的排列问题 */
+            /* height: 122px; */
+
+            /* 第二种解决方案,让父元素跟着一起float,也就到了同一个层级,高度就能回来了
+            但是仍然没法解决父元素内非float元素的排列问题 */
+            /* float: left; */
+
+            /* 第三种解决方案,溢出隐藏,解决了父元素高度塌陷的问题
+            但是仍然没法解决父元素内非float元素的排列问题 */
+            /* overflow: hidden; */
+        }
+        .box {
+            background-color: skyblue;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 10px;
+        }
+        .box1,.box2,.box3 {
+            float: left;
+        }
+        .box4 {
+            /* 第四种解决方案,利用clear属性,比较完美,父元素高度塌陷和子元素正常元素排列都能正常显示 */
+            /* 消除前面所有左浮动兄弟的影响 */
+            clear: left;
+            /* 消除前面所有右浮动兄弟的影响 */
+            clear: right;
+            /* 消除前面所有浮动兄弟的影响 */
+            clear: both;
+            /* 无论clear怎么写,都是不包括自己也不包括之后
+            所以如果这个时候写下面这行代码给.box4,
+            clear会在消除前面三个box影响的同时让box4在新的一行开始浮动
+             */
+            float: left;
+            /* clear属性在行内元素身上不生效 */
+        }
+        .mofa {
+            /* 跟上面一样是第四种解决方案,div没宽没高没内容,只是消除前面的浮动影响*/
+            clear: both;
+        }
+        .outer::after{
+            /* 第五种方式,比较优雅,利用伪元素 */
+            /* 但是伪元素之前的得全是浮动元素,否则非浮动元素不能完美的按我们想要的模式显示 */
+            content: '';
+            display: block;
+            clear: both;
+        }
+        /* 布局中的原则:设置浮动的时候,兄弟元素要么全部浮动,要么全都不浮动 */
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <!-- <div class="box box4">4</div> -->
+        <!-- <div class="mofa"></div> -->
+    </div>
+    <div style="background-color: orange;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius error, obcaecati minus dolores voluptas tenetur, neque laudantium odit architecto quod autem beatae mollitia deleniti soluta, quo placeat voluptatum incidunt vel natus recusandae earum? Porro sequi unde, iure eveniet magnam repellendus perspiciatis accusamus earum dolor voluptas, rerum laudantium commodi, dolorum quaerat at ab mollitia? Perspiciatis accusantium incidunt ratione autem, quisquam non illum necessitatibus voluptatibus voluptatum doloribus ut dolorum? Provident atque id possimus impedit ea cupiditate necessitatibus illum perspiciatis quis rem aspernatur, similique nisi obcaecati magni sed quisquam quidem dicta? Necessitatibus, cum eius! In explicabo alias distinctio velit voluptatum necessitatibus, error itaque?</div>
+</body>
+</html>

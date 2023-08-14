@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        相对定位
+    </title>
+    <style>
+        .outer {
+            width: 500px;
+            background-color: skyblue;
+            border: 1px solid black;
+            padding: 20px;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+        }
+        .box1 {
+            background-color: #888;
+        }
+        .box2 {
+            background-color: orange;
+            /* 相对定位相对的是自己原来的位置(relative) */
+            /* 相对定位想比浮动,相对定位可以超出父容器所在的范围,而浮动不会 */
+            /* 并且相对定位没有脱离文档流,即使移动出了空位仍然占位,后面的元素没法顶上来 */
+            position: relative;
+            left: 210px;
+            right: 50px;
+            /* left和right不能同时使用,假如同时使用了left生效,和他们出现顺序无关 */
+            /* bottom: 20px; */
+            /* top和bottom不能同时使用,假如同时使用了top生效,和他们出现顺序无关 */
+            top: 20px;
+            /* 元素只要开启了定位,则层级就比普通元素更高(z-index),层级更高的会覆盖掉层级低的显示 */
+            float: left;
+            padding: 20px;
+            margin-left: 30px;
+            /* 虽然相对定位能和margin,padding等盒子模型的属性一起用
+            甚至也能和float一起用,但是都不推荐,网页后期布局维护起来非常麻烦 */
+            /* 相对定位的好处在于,它不脱离文档流的同时它还能对元素的位置进行调整并且不会像浮动一样影响其他元素的位置 */
+            /* 所以它的第一个应用场景就是对元素位置进行微调 */
+        }
+        .box3 {
+            background-color: green;
+            /* position: relative;
+            left: 210px;
+            top: -50px; */
+            /* 如果都开启了定位,也就是层级一样则后生效的元素覆盖前面的元素 */
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+    </div>
+</body>
+</html>

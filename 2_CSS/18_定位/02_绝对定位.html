@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位</title>
+    <style>
+        .outer {
+            width: 500px;
+            background-color: skyblue;
+            border: 1px solid black;
+            padding: 20px;
+            position:absolute;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+        }
+        .box1 {
+            background-color: #888;
+        }
+        .box2 {
+            background-color: orange;
+            position: absolute;
+            left: 20px;
+            top: 220px;
+            /* 何为包含块？一个元素的包含快在哪？ */
+            /* 1.没有脱离文档流的元素,他父元素就是他的直接包含块 */
+            /* 2.脱离文档流的元素,第一个开启定位(相对定位,绝对定位,固定定位,粘性定位)的祖先元素,就是他的包含块 */
+            float: left;
+            /* 绝对定位的元素不能和浮动共存,如果写了浮动听绝对定位的,浮动不生效 */
+            /* 开启了绝对定位的元素,不管之前是什么元素,之后都摇身一变定位元素,可以设置宽高 */
+            /* 相对定位没有绝对定位这个特性 */
+
+            /* 绝对定位的第一个应用场景就是遮挡其他元素 */
+
+            transition: 1s all linear;
+        }
+        .box3 {
+            background-color: green;
+        }
+        .outer:hover .box2{
+            left: 220px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+    </div>
+</body>
+</html>

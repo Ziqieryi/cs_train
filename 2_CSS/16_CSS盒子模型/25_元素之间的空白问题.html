@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素之间的空白问题</title>
+    <style>
+        div {
+            height: 200px;
+            background-color: gray;
+
+            /* 解决元素之间的空白问题 */
+            font-size: 0px;
+        }
+        .s1 {
+            background-color: skyblue;
+        }
+        .s2 {
+            background-color: orange;
+        }
+        .s3 {
+            background-color: green;
+        }
+        span {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!-- 因为行内元素和行内块元素是从左到右依次排列充满一行的,但是我们代码编写的时候回车会被浏览器认为是空格
+        所以这个空格会在每个元素之间存在,解决办法就是空格也是文字的一种,我们让font-size为0即可解决 -->
+        <span class="s1">人之初</span>
+        <span class="s2">性本善</span>
+        <span class="s3">性相近</span>
+        <hr>
+        <img src="../images/悟空.jpg" alt="">
+        <img src="../images/悟空.jpg" alt="">
+        <img src="../images/悟空.jpg" alt="">
+    </div>
+</body>
+</html>

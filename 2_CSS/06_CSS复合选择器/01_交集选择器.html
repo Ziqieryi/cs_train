@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交集选择器</title>
+    <style>
+        .rich {
+            color: gold;
+        }
+        .beauty {
+            color: red;
+        }
+        /* 交集选择器这么写的情况最多,元素打头然后跟着各种选择器 */
+        p.beauty {
+            color: green;
+        }
+        /* 一般不这么写,如果要两个类交集的话不如直接像下面一样写个单独的orange */
+        .rich.beauty {
+            color: orange;
+        }  
+        .orange {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="rich">土豪张三</h2>
+    <h2 class="beauty">明星李四</h2>
+    <h2 class="orange">土豪明星王五</h2>
+    <h2 class="rich beauty">土豪明星老六</h2>
+    <hr>
+    <p class="beauty">小狗旺财</p>
+    <p class="beauty">小猪佩奇</p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子的边框border</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: skyblue;
+            border-style: solid;
+            /* boder默认宽度3px,黑色 */
+
+            border-left-width: 10px;
+            border-right-width: 20px;
+            border-top-width: 30px;
+            border-bottom-width: 40px;
+            
+            border-color: red;
+            /* 同样的color也能上下左右去设置 */
+            border-style: solid;
+            /* 同样的style也能上下左右去设置 */
+
+            /* 也有上下左右每个的复合border */
+            border-left: 50px solid purple;
+            border-right: 60px dashed orange;
+            border-top: 70px double green;
+            border-bottom: 80px dotted gray;
+        }
+    </style>
+</head>
+<body>
+    <div>你好啊</div>
+</body>
+</html>

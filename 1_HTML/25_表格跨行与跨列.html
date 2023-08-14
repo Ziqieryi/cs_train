@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格的跨行与跨列</title>
+</head>
+<body>
+    <table border="1" cellspacing="0">
+        <caption>课程表</caption>
+        <thead>
+            <tr>
+                <th colspan="1">项目</th>
+                <th colspan="5">上课</th>
+                <th colspan="2">活动与休息</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>星期</th>
+                <th>星期一</th>
+                <th>星期二</th>
+                <th>星期三</th>
+                <th>星期四</th>
+                <th>星期五</th>
+                <th>星期六</th>
+                <th>星期日</th>
+            </tr>
+            <tr>
+                <th rowspan="4">上午</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th rowspan="6">休息</th>
+            </tr>
+            <tr>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                
+            </tr>
+            <tr>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                
+            </tr>
+            <tr>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                
+            </tr>
+            <tr>
+                <th rowspan="2">下午</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <!-- <th>休息</th> -->
+            </tr>
+            <tr>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+                <th>语文</th>
+            </tr>
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+    </table>
+</body>
+</html>

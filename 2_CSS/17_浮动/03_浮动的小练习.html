@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动小练习</title>
+    <style>
+        .outer {
+            width: 400px;
+            border: 2px solid black;
+            background-color: gray;
+        }
+        .one {
+            background-color: skyblue;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border: 2px solid black;
+        }
+        .float-right {
+            float: right;
+        }
+        .float-left {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- 布局1 -->
+    <div class="outer">
+        <div class="one float-right">1</div>
+        <div class="one">2</div>
+        <div class="one">3</div>
+    </div>
+    <hr>
+    <hr>
+    <!-- 布局2 -->
+    <div class="outer">
+        <!-- 注意这里这个效果,div2并不是和div3叠在一起了,div2和浮动的div1还是在同一行,只不过文字在一起了
+        所以为了实现围绕的效果,div2里的2就被甩出来了看似到了div3里. -->
+        <div class="one float-left">1</div>
+        <div class="one">2</div>
+        <div class="one">3</div>
+    </div>
+    <hr>
+    <hr>
+    <!-- 布局3 -->
+    <div class="outer">
+        <!-- 全都浮动起来,一个围绕一个,所有的都在同一行并且脱离了文档流,父元素里没有儿子了就没高度了 -->
+        <div class="one float-left">1</div>
+        <div class="one float-left">2</div>
+        <div class="one float-left">3</div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <hr>
+    <!-- 布局4 -->
+    <div class="outer">
+        <div class="one float-left">1</div>
+        <div class="one float-left" style="margin-right: 40px;">2</div>
+        <div class="one float-left">3</div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <hr>
+    <!-- 布局5 -->
+    <!-- float布局中,多个float元素之间的排列总是会选择在满足设置的float属性下尽量维持一个最小高度 -->
+    <div class="outer">
+        <div class="one float-left" style="height: 120px;">1</div>
+        <div class="one float-left" style="height: 60px;">2</div>
+        <div class="one float-left" style="height: 100px;">3</div>
+        <div class="one float-left">4</div>
+    </div>
+    <div class="outer" style="clear: left;">
+        <div class="one" style="height: 100px;display: inline-block;">1</div>
+        <div class="one" style="height: 60px;display: inline-block;margin-right: 40px;">2</div>
+        <div class="one" style="height: 120px;display: inline-block;">3</div>
+    </div>
+</body>
+</html>

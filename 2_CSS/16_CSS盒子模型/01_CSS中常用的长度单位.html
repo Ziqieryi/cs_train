@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常用长度单位</title>
+    <style>
+        #d1 {
+            /* 第一种长度单位:px(像素) */
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+            background-color: skyblue;
+        }
+        #d2 {
+            /* 第二种长度单位:em(相对于当前元素的font-size的倍数),
+            注意如果没有font-size,会根据其父元素,想想css的继承性,
+            而且就算谁都没有设置,默认html也是继承浏览器设置的字体大小,chrome是16px
+             */
+            width: 10em;
+            height: 10em;
+            font-size: 20px;
+            background-color: orange;
+        }
+        #d3 {
+            /* 第三种长度单位:rem(相对于根元素(html)的font-size的倍数) */
+            width: 10rem;
+            height: 10rem;
+            font-size: 20px;
+            background-color: skyblue;
+        }
+        #d4 {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+            background-color: gray;
+        }
+        .inside {
+            /* 第四种长度单位：%(相对于其父元素的百分比) */
+            width: 50%;
+            height: 25%;
+            font-size: 150%;
+            background-color: orange;
+        }
+        .test {
+            font-size: 20px;
+            text-indent: 2em;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">1</div>
+    <hr>
+    <div id="d2">2</div>
+    <hr>
+    <div id="d3">3</div>
+    <hr>
+    <div id="d4">
+        <div class="inside">4</div>
+    </div>
+    <hr>
+    <div class="test">你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊</div>
+</body>
+</html>

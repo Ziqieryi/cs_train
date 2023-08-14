@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>处理内容的溢出</title>
+    <style>
+        #d1 {
+            width: 400px;
+            height: 200px;
+            background-color: skyblue;
+            overflow: hidden;
+            overflow: hidden;
+            overflow: scroll;
+            overflow: auto;
+            /* 不推荐使用overflow-x和overflow-y */
+        }
+
+        #d2 {
+            width: 1000px;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem modi omnis praesentium maiores
+        laudantium commodi quod at nobis exercitationem obcaecati veritatis aut voluptatum architecto temporibus
+        reprehenderit magnam,
+        <div id="d2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat nesciunt est fugit atque quidem
+            velit adipi</div>
+        voluptate sapiente error vitae asperiores in libero labore! Eos explicabo commodi tenetur
+        quis ea! Nemo ea accusantium commodi consequatur atque ipsam eos. Sunt quidem sint ratione minus, nesciunt, ea
+        esse distinctio, ducimus nihil necessitatibus corrupti! Facere adipisci a, voluptatibus inventore qui vitae
+        officia voluptate repellat aut deserunt debitis, sed libero asperiores ea, ipsum enim eius facilis placeat.
+        Ipsam distinctio magnam assumenda vero aliquam maiores quam excepturi, recusandae dolorum est porro minus
+        possimus et.
+    </div>
+</body>
+
+</html>

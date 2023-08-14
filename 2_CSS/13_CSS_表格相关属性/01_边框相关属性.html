@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        表格边框相关属性
+    </title>
+    <style>
+        table {
+            border-width: 2px;
+            border-color: green;
+            border-style: dotted;
+            /* 简写,和font,list-style一样,声明里写多个属性,复合在一起 */
+            border: 2px green solid;
+        }
+        td,th {
+            border: 2px solid orange;
+        }
+        h2 {
+            border: solid red 2px;
+        }
+        span {
+            border: purple dashed 3px;
+        }
+    </style>
+</head>
+<body>
+    <h2>边框相关的属性不仅仅是表格能用,其他元素也能用</h2>
+    <span>你要加油呀！</span>
+     <table>
+        <caption>人员信息</caption>
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>政治面貌</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>张三</td>
+                <td>18</td>
+                <td>男</td>
+                <td>党员</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>张三</td>
+                <td>18</td>
+                <td>男</td>
+                <td>党员</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>张三</td>
+                <td>18</td>
+                <td>男</td>
+                <td>党员</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>张三</td>
+                <td>18</td>
+                <td>男</td>
+                <td>党员</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+
+            </tr>
+        </tfoot>
+     </table>
+</body>
+</html>

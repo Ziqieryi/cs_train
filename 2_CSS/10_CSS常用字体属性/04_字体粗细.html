@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体粗细</title>
+    <style>
+        div {
+            font-size: 100px;
+        }
+        .atguigu1 {
+            font-weight: lighter;
+        }
+        .atguigu2 {
+            font-weight: normal;
+        }
+        .atguigu3 {
+            font-weight: bold;
+        }
+        /* 绝大多数字体在设计的时候就分细,正常,粗,刚好对应font-weight的三种预定属性
+        lighter,normal,bold,至于bolder字体有设计则会比bold更粗,否则和bold一样 */
+        .atguigu4 {
+            font-weight: bolder;
+        }
+        /* 字体粗细还可以用数字来设定,取值范围[100,1000], */
+        .atguigu5 {
+            font-weight: 100;
+        }
+        .atguigu6 {
+            font-weight: 350;
+        }
+        .atguigu7 {
+            font-weight: 550;
+        }
+        /* 但是还是那句话,字体设计者一般只设计三种粗细 */
+        /* 所以即便这个数字可以变化步长非常小,但是也没有几百种粗细 */
+        /* 对于默认的微软雅黑我们可以实验发现 */
+        /* 100-350是lighter,350-550是normal,550-1000是bold */
+    </style>
+</head>
+<body>
+    <div class="atguigu1">尚硅谷1</div>
+    <div class="atguigu2">尚硅谷2</div>
+    <div class="atguigu3">尚硅谷3</div>
+    <div class="atguigu4">尚硅谷4</div>
+    <div class="atguigu5">尚硅谷5</div>
+    <div class="atguigu6">尚硅谷6</div>
+    <div class="atguigu7">尚硅谷7</div>
+</body>
+</html>
